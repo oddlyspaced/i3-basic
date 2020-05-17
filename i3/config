@@ -12,6 +12,7 @@ exec --no-startup-id nm-applet
 
 # autostart
 exec --no-startup-id nitrogen --set-zoom-fill ~/.config/wallpaper*
+exec --no-startup-id xinput set-prop $(xinput list | grep "Touchpad" | cut -d'=' -f 2 | cut -d'[' -f 1) $(xinput list-props $(xinput list | grep "Touchpad" | cut -d'=' -f 2 | cut -d'[' -f 1) | grep "Tapping Enabled (" | cut -d'(' -f 2 | cut -d')' -f 1) 1
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id killall -p picom; picom -b
 
