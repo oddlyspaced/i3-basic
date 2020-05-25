@@ -16,7 +16,7 @@ exec --no-startup-id xinput set-prop $(xinput list | grep "Touchpad" | cut -d'='
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id killall -p picom; picom -b
 exec --not-startup-id redshift
-exec --no-startup-id xgamma -quiet -rgamma 0.90 -ggamma 0.90 -bgamma 0.90
+exec --no-startup-id xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
