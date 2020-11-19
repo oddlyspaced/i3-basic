@@ -35,6 +35,9 @@ bindsym Print exec --no-startup-id cd ~/Screenshots && scrot && dunstify "Screen
 # Launch browser
 bindsym $mod+b exec --no-startup-id google-chrome-stable
 
+# Launch nemo
+bindsym $mod+n exec --no-startup-id nemo
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
