@@ -14,7 +14,7 @@ font-1 = FontAwesome5Free:style=Solid:size=9;2
 
 modules-left = i3 sep windowtitle
 modules-center =
-modules-right = spotify sep memory sep cpu sep wired-network wireless-network sep pulseaudio sep battery sep date
+modules-right = spotify sep memory sep cpu sep wired-network wireless-network sep pulseaudio sep mic sep battery sep date
 
 separator =
 
@@ -227,6 +227,13 @@ format = <label>
 label = %title%
 format-foreground = #f8f8f2
 label-maxlen = 50
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/mic]
+type = custom/script
+exec = pactl list sources | grep -qi 'Mute: yes' && echo "" || echo ""
+interval = 0
+click-left = pactl list sources | grep -qi 'Mute: yes' && pactl set-source-mute 1 false || pactl set-source-mute 1 true
+format-foreground = #bd93f9
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/sep]
 inherit = module/decor-glyph
