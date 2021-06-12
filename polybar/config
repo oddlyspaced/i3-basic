@@ -181,7 +181,7 @@ format-muted-foreground = #50fa7b
 type = internal/network
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid% :  %upspeed%   %downspeed%
-interface = wlp1s0
+interface = wlan0
 
 label-connected-foreground = #8be9fd
 
