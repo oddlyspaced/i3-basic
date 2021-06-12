@@ -15,7 +15,6 @@ exec --no-startup-id nitrogen --set-zoom-fill ~/.config/wallpaper*
 exec --no-startup-id xinput set-prop $(xinput list | grep "Touchpad" | cut -d'=' -f 2 | cut -d'[' -f 1) $(xinput list-props $(xinput list | grep "Touchpad" | cut -d'=' -f 2 | cut -d'[' -f 1) | grep "Tapping Enabled (" | cut -d'(' -f 2 | cut -d')' -f 1) 1
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id killall -p picom; picom -b
-exec --no-startup-id redshift
 exec --no-startup-id xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85
 exec --no-startup-id xbindkeys
 
