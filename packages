@@ -10,8 +10,6 @@ rofi
 picom-ibhagwan-git
 lxappearance
 nitrogen
-light
-redshift
 lightdm-mini-greeter
 xorg-xinput
 python-dbus
