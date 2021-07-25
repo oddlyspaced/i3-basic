@@ -35,8 +35,10 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 
 # Use light to adjust brightness
-bindsym XF86MonBrightnessUp exec xbacklight + 10
-bindsym XF86MonBrightnessDown exec xbacklight - 10
+# bindsym XF86MonBrightnessUp exec xbacklight + 10
+# bindsym XF86MonBrightnessDown exec xbacklight - 10
+bindsym XF86MonBrightnessUp exec brc -i 2500
+bindsym XF86MonBrightnessDown exec brc -d 2500
 
 # Use scrot for screenshots
 bindsym Print exec --no-startup-id cd ~/Screenshots && scrot && dunstify "Screenshot Taken"
