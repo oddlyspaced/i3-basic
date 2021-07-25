@@ -37,6 +37,10 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 # Use light to adjust brightness
 # bindsym XF86MonBrightnessUp exec xbacklight + 10
 # bindsym XF86MonBrightnessDown exec xbacklight - 10
+
+# brc is a custom executable compiled from a C program
+# This is to increase portability since often a lot of programs don't work
+# Check github.com/oddlyspaced/scripts for brc.c file
 bindsym XF86MonBrightnessUp exec brc -i 2500
 bindsym XF86MonBrightnessDown exec brc -d 2500
 
