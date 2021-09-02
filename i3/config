@@ -65,6 +65,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec $HOME/.config/rofi/launch.sh
+bindsym $mod+g exec $HOME/.config/rofi/emoji/launcher.sh
 
 # change focus
 bindsym $mod+j focus left
