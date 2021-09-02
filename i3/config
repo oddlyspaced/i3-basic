@@ -41,8 +41,8 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 # brc is a custom executable compiled from a C program
 # This is to increase portability since often a lot of programs don't work
 # Check github.com/oddlyspaced/scripts for brc.c file
-bindsym XF86MonBrightnessUp exec brc -i 2500
-bindsym XF86MonBrightnessDown exec brc -d 2500
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Use scrot for screenshots
 bindsym Print exec --no-startup-id cd ~/Screenshots && scrot && dunstify "Screenshot Taken"
@@ -64,7 +64,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec $HOME/.config/rofi/launch.sh
 
 # change focus
 bindsym $mod+j focus left
