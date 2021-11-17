@@ -1,4 +1,5 @@
 ufetch | lolcat
+set -U fish_greeting ""
 set -x EDITOR nvim
 set -x PATH /home/hardik/.gem/ruby/2.7.0/bin:$PATH
 set -x PATH /home/hardik/Softwares/flutter/bin:$PATH
