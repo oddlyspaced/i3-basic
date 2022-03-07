@@ -7,6 +7,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Fantasque Sans Mono 8
 
+# multimonitor
+# exec --no-startup-id xrandr --output eDP1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+
 # launch network manager applet on launch
 exec --no-startup-id nm-applet
 
