@@ -30,11 +30,14 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Multi Monitor (from ARandR)
+exec --no-startup-id xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output VIRTUAL1 --off
+
 # autostart
 exec --no-startup-id nitrogen --restore
 # exec --no-startup-id nitrogen --set-zoom-fill ~/.config/wallpaper*
 exec --no-startup-id xinput set-prop $(xinput list | grep "Touchpad" | cut -d'=' -f 2 | cut -d'[' -f 1) $(xinput list-props $(xinput list | grep "Touchpad" | cut -d'=' -f 2 | cut -d'[' -f 1) | grep "Tapping Enabled (" | cut -d'(' -f 2 | cut -d')' -f 1) 1
-exec_always --no-startup-id polybar -r bottom
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id killall -p picom; picom -b
 exec --no-startup-id xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85
 
@@ -195,3 +198,6 @@ gaps inner 4
 gaps outer -2
 
 smart_gaps on
+
+# last workspace to edp1
+workspace $ws10 output eDP1
