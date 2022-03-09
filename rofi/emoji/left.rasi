@@ -1,7 +1,7 @@
 configuration{
     sidebar-mode: true;
     show-icons: true;
-    font: "Fantasque Sans Mono 14";
+    font: "Iosevka Nerd Font Mono 14";
 }
 
 

@@ -3,7 +3,7 @@
 ## Original Author  : Aditya Shakya
 ## Modified By	    : Hardik Srivastava
 
-dir="$HOME/.config/rofi/"
+dir="$HOME/.config/rofi/app"
 
 # dark
 ALPHA="#00000000"
