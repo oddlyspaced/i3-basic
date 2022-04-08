@@ -1,0 +1,57 @@
+#!/bin/bash
+
+parse_time() {
+	processed=$(echo $1 | grep -o -E '[0-9]+')
+	# if space exists that means it has both hours and minutes
+	if [[ $processed = *[[:space:]]* ]];
+	then
+		local hours=$(echo $processed | cut -d' ' -f 1)
+	fi
+	local mins=$(echo $processed | cut -d' ' -f 2)
+	# if hours is empty -> only mins
+	if [ -z "$hours" ];
+	then
+		local total=$mins
+	else
+		local total=$(( $mins + $hours * 60 ))
+	fi
+	return $total
+}
+
+minutes_to_proper() {
+	local m=$1
+	if [ $m -lt 60 ];
+	then
+		echo "$m minutes"
+	else
+		local h=$(( $m / 60 ))
+		m=$(( m - h*60 ))
+		echo "$h hours, $m minutes"
+	fi
+}
+
+# fetch total time information from wakatime
+total=$(wakatime --today)
+
+# 1 -> default
+# 2 -> summed up time
+# 3 -> only coding
+variant=$1
+
+if [ "$variant" = "1" ];
+then
+	echo $total
+else
+	coding=$(echo $total | cut -d',' -f 1)
+	browsing=$(echo $total | cut -d',' -f 2)
+	time=0
+	parse_time "$coding"
+	time=$(( time + $? ))
+	if [ "$variant" = "2" ];
+	then
+		parse_time "$browsing"
+		time=$(( time + $? ))
+	fi
+	minutes_to_proper $time
+fi
+
